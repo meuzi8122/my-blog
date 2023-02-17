@@ -1,6 +1,7 @@
 "use client";
 
-import { Input } from "@/components/shared";
+import { IconButton, Input } from "@/components/shared";
+import { SearchIcon } from "@/components/shared/icon";
 import { useRouter } from "next/navigation";
 import { ChangeEvent, useState } from "react";
 
@@ -21,7 +22,9 @@ export default () => {
     return (
         <>
             <Input value={keyword} onChange={handleKeywordChange} />
-            <button onClick={navigate}></button>
+            <IconButton aria-label="search" onClick={navigate}>
+                <SearchIcon />
+            </IconButton>
         </>
     )
 

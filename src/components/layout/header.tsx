@@ -1,6 +1,7 @@
-import { Box, Flex, Heading, IconButton } from "@/components/shared";
-import { SearchIcon } from "@/components/shared/icon";
+import SearchForm from "@/components/form/search";
+import { Box, Flex, Heading } from "@/components/shared";
 import NextLink from "next/link";
+
 
 export default () => {
 
@@ -24,11 +25,7 @@ export default () => {
                         <NextLink href="/">メモ</NextLink>
                     </Heading>
                 </Flex>
-                <NextLink href="/search">
-                    <IconButton aria-label="search">
-                        <SearchIcon />
-                    </IconButton>
-                </NextLink>
+                <SearchForm />
             </Flex>
         </Box>
     );
