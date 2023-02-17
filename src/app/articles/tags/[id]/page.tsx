@@ -19,7 +19,7 @@ export default async ({ params: { id } }: Props) => {
     return (
         <Container as="main" maxW="container.lg" marginTop="4" marginBottom="16">
             <Suspense fallback={<Text>loading..</Text>}>
-                <Heading as="h2" fontSize="2xl" fontWeight="bold" mb="8">{`タグ「${tag.name}」の記事`}</Heading>
+                <Heading as="h2" fontSize="lg" fontWeight="bold" mb="8">{`タグ「${tag.name}」の記事`}</Heading>
                 <ArticleList articles={articles} />
             </Suspense>
         </Container>

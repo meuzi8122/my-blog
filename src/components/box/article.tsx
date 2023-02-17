@@ -11,13 +11,13 @@ export default ({ article }: Props) => {
     return (
         <Box>
             <NextLink href={`/articles/${article.id}`}>
-                <Heading as="h3" fontSize="3xl" lineHeight={1.6} marginTop={1} flex={1}>{article.title}</Heading>
+                <Heading as="h3" fontSize="xl" lineHeight={1.6} marginTop={1} flex={1}>{article.title}</Heading>
             </NextLink>
-            <Text fontSize="xl" color="gray.500" mt={2} mb={1}>2022/1/1</Text>
+            <Text fontSize="md" color="gray.500" mt={2} mb={1}>2022/1/1</Text>
             <HStack spacing={1}>
                 {article.tags.map(tag =>
                     <NextLink key={tag.id} href={`/articles/tags/${tag.id}`}>
-                        <Badge fontSize={17} textTransform="none" colorScheme="green">{tag.name}</Badge>
+                        <Badge fontSize="sm" textTransform="none" colorScheme="green">{tag.name}</Badge>
                     </NextLink>
                 )}
             </HStack>

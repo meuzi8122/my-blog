@@ -15,7 +15,7 @@ export default async ({ searchParams: { keyword } }: Props) => {
 
     return (
         <Container as="main" maxW="container.lg" marginTop="4" marginBottom="16">
-            <Heading as="h2" fontSize="2xl" fontWeight="bold" mb="8">{`「${keyword}」を含む記事`}</Heading>
+            <Heading as="h2" fontSize="lg" fontWeight="bold" mb="8">{`「${keyword}」を含む記事`}</Heading>
             <Suspense fallback={<Text>loading..</Text>}>
                 <ArticleList articles={articles} />
             </Suspense>
