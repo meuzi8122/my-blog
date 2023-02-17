@@ -15,7 +15,7 @@ export async function findArticles(params?: { type: "TAG" | "KEYWORD"; value: st
     let filters = "";
 
     if (params?.type === "TAG") {
-        filters += `tag[contains]${params?.value}`;
+        filters += `tags[contains]${params?.value}`;
     } else if (params?.type === "KEYWORD") {
         filters += `title[contains]${params?.value}[or]body[contains]${params?.value}`;
     }
@@ -24,6 +24,6 @@ export async function findArticles(params?: { type: "TAG" | "KEYWORD"; value: st
 
 }
 
-export async function getArticle(id: string): Promise<Article> {
-    return parseArticle(await getContent({ endpoint: "articles", contentId: id, fields: "id,title,body,tags.id,tags.name" }));
+export async function getArticle(contentId: string): Promise<Article> {
+    return parseArticle(await getContent({ endpoint: "articles", contentId, fields: "id,title,body,tags.id,tags.name" }));
 }

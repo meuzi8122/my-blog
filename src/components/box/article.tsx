@@ -17,7 +17,7 @@ export default ({ article }: Props) => {
             <HStack spacing={1}>
                 {article.tags.map(tag =>
                     <NextLink key={tag.id} href={`/articles/tags/${tag.id}`}>
-                        <Badge fontSize={17} textTransform="none">{tag.name}</Badge>
+                        <Badge fontSize={17} textTransform="none" colorScheme="green">{tag.name}</Badge>
                     </NextLink>
                 )}
             </HStack>
