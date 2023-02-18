@@ -38,11 +38,11 @@ export default ({ articles }: Props) => {
             </Stack>
             <Center>
                 <HStack spacing={2}>
-                    <Text>{`全${MAX_PAGE}ページ中${page}ページ目を表示`}</Text>
-                    <IconButton aria-label="previous 5 articles" colorScheme="teal" onClick={backPage}>
+                    <Text>{`${MAX_PAGE}ページ中${page}ページ目を表示`}</Text>
+                    <IconButton aria-label="previous 5 articles" colorScheme="orange" onClick={backPage}>
                         <ChevronLeftIcon />
                     </IconButton>
-                    <IconButton aria-label="next 5 articles" colorScheme="teal" onClick={forwardPage}>
+                    <IconButton aria-label="next 5 articles" colorScheme="orange" onClick={forwardPage}>
                         <ChevronRightIcon />
                     </IconButton>
                 </HStack>
