@@ -41,7 +41,7 @@ async function findArticles(tagId: string): Promise<Article[]> {
     return (await client.get({
         endpoint: "articles",
         queries: {
-            fields: "id,title,tags",
+            fields: "id,title,tags,revisedAt",
             filters: `tags[contains]${tagId}`,
             limit: 100
         }

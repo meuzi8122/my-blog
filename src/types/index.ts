@@ -3,6 +3,7 @@ export type Article = {
     title: string;
     body?: string;
     tags: Tag[];
+    revisedAt: string;
 }
 
 export type Tag = {

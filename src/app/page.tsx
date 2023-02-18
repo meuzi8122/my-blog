@@ -23,7 +23,7 @@ export async function findArticles(): Promise<Article[]> {
     return (await client.get({
         endpoint: ARTICLE_ENDPOINT,
         queries: {
-            fields: "id,title,body,tags",
+            fields: "id,title,body,tags,revisedAt",
             limit: 100
         }
     })).contents.map((content: any) => parseArticle(content));

@@ -13,7 +13,7 @@ export default ({ article }: Props) => {
             <NextLink href={`/articles/${article.id}`}>
                 <Heading as="h3" fontSize="xl" lineHeight={1.6} mb={1} flex={1}>{article.title}</Heading>
             </NextLink>
-            <Text fontSize="md" color="gray.500" mt={2} mb={1}>2022/1/1</Text>
+            <Text fontSize="md" color="gray.500" mt={2} mb={1}>{article.revisedAt}</Text>
             <HStack spacing={1}>
                 {article.tags.map(tag =>
                     <NextLink key={tag.id} href={`/articles/tags/${tag.id}`}>

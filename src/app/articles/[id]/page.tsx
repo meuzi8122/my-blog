@@ -38,7 +38,7 @@ async function getArticle(articleId: string): Promise<Article> {
         endpoint: ARTICLE_ENDPOINT,
         contentId: articleId,
         queries: {
-            fields: "id,title,body,tags",
+            fields: "id,title,body,tags,revisedAt",
         },
     }));
 }
