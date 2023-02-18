@@ -23,7 +23,7 @@ export default async ({ params: { id } }: Props) => {
                     <HStack spacing={1}>
                         {article.tags.map(tag =>
                             <Fragment key={tag.id}>
-                                <TagBadge tag={tag} />
+                                <TagBadge tag={tag} colorTheme="green" />
                             </Fragment>
                         )}
                     </HStack>

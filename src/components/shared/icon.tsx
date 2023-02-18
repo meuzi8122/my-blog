@@ -1,7 +1,9 @@
 "use client";
 
-import { HamburgerIcon } from "@chakra-ui/icons";
+import { HamburgerIcon, ChevronLeftIcon, ChevronRightIcon } from "@chakra-ui/icons";
 
 export {
-    HamburgerIcon
+    HamburgerIcon,
+    ChevronLeftIcon,
+    ChevronRightIcon
 };

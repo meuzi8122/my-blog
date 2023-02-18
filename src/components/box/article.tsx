@@ -19,11 +19,11 @@ export default ({ article }: Props) => {
             <HStack spacing={1}>
                 {article.tags.map(tag =>
                     <Fragment key={tag.id}>
-                        <TagBadge tag={tag} />
+                        <TagBadge tag={tag} colorTheme="green" />
                     </Fragment>
                 )}
             </HStack>
-            <Divider color="gray.300" mt={5} mb={5} border="1px" />
+            <Divider color="gray.300" mt={3} mb={3} border="1px" />
         </Box>
     )
 

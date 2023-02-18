@@ -17,9 +17,9 @@ export default async ({ params: { id } }: Props) => {
     const articles = await findArticles(id);
 
     return (
-        <Container as="main" maxW="container.lg" mb={4} marginBottom="16">
+        <Container as="main" maxW="container.lg">
             <Suspense fallback={<Text>loading..</Text>}>
-                <Heading as="h2" fontSize="lg" fontWeight="bold" mb="8">{`タグ「${tag.name}」の記事`}</Heading>
+                <Heading as="h2" fontSize="lg" fontWeight="bold" mb="6">{`タグ「${tag.name}」の記事`}</Heading>
                 <ArticleList articles={articles} />
             </Suspense>
         </Container>
