@@ -3,13 +3,13 @@
 import {
     Badge,
     Box,
-    Button,
     Container,
     Divider,
     Flex,
     Heading,
     HStack,
-    IconButton, Input, Stack,
+    IconButton, 
+    Stack,
     Text,
     VStack
 } from "@chakra-ui/react";
@@ -17,7 +17,6 @@ import {
 export {
     Badge,
     Box,
-    Button,
     Container,
     IconButton,
     Divider,
@@ -27,6 +26,5 @@ export {
     Text,
     Flex,
     Stack,
-    Input
 };
 

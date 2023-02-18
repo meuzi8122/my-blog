@@ -1,4 +1,3 @@
-import SearchForm from "@/components/form/search";
 import { Box, Flex, Heading } from "@/components/shared";
 import NextLink from "next/link";
 
@@ -21,11 +20,9 @@ export default () => {
             >
                 <Flex flex={1} justify="space-between" maxW="5xl" mx="auto">
                     <Heading as="h1" size="lg">
-                        {/* <NextLink href="/">Meuzi's memo</NextLink> */}
-                        <NextLink href="/">メモ</NextLink>
+                        <NextLink href="/">Meuzi's memo</NextLink>
                     </Heading>
                 </Flex>
-                <SearchForm />
             </Flex>
         </Box>
     );

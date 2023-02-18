@@ -1,4 +1,4 @@
-import { Badge, Box, Button, Divider, Heading, HStack, Text } from "@/components/shared";
+import { Badge, Box, Divider, Heading, HStack, Text } from "@/components/shared";
 import type { Article } from "@/types";
 import NextLink from "next/link";
 
@@ -11,7 +11,7 @@ export default ({ article }: Props) => {
     return (
         <Box>
             <NextLink href={`/articles/${article.id}`}>
-                <Heading as="h3" fontSize="xl" lineHeight={1.6} marginTop={1} flex={1}>{article.title}</Heading>
+                <Heading as="h3" fontSize="xl" lineHeight={1.6} mb={1} flex={1}>{article.title}</Heading>
             </NextLink>
             <Text fontSize="md" color="gray.500" mt={2} mb={1}>2022/1/1</Text>
             <HStack spacing={1}>
@@ -21,12 +21,7 @@ export default ({ article }: Props) => {
                     </NextLink>
                 )}
             </HStack>
-            <NextLink href={`/articles/${article.id}`}>
-                <Button colorScheme='teal' variant='outline' size="sm" mt="8">
-                    続きを読む
-                </Button>
-            </NextLink>
-            <Divider color="gray.300" mt={10} mb={10} border="1px" />
+            <Divider color="gray.300" mt={5} mb={5} border="1px" />
         </Box>
     )
 

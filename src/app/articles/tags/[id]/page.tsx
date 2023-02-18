@@ -1,7 +1,7 @@
 import ArticleList from "@/components/list/article";
 import { Container, Heading, Text } from "@/components/shared";
-import { findArticles } from "@/libs/client/article";
-import { getTag } from "@/libs/client/tag";
+import { client, parseArticle, parseTag, TAG_ENDPOINT } from "@/libs/client";
+import type { Article, Tag } from "@/types";
 import { Suspense } from "react";
 
 type Props = {
@@ -14,10 +14,10 @@ export default async ({ params: { id } }: Props) => {
 
     const tag = await getTag(id);
 
-    const articles = await findArticles({ type: "TAG", value: id });
+    const articles = await findArticles(id);
 
     return (
-        <Container as="main" maxW="container.lg" marginTop="4" marginBottom="16">
+        <Container as="main" maxW="container.lg" mb={4} marginBottom="16">
             <Suspense fallback={<Text>loading..</Text>}>
                 <Heading as="h2" fontSize="lg" fontWeight="bold" mb="8">{`タグ「${tag.name}」の記事`}</Heading>
                 <ArticleList articles={articles} />
@@ -25,4 +25,25 @@ export default async ({ params: { id } }: Props) => {
         </Container>
     );
 
+}
+
+async function getTag(tagId: string): Promise<Tag> {
+    return parseTag(await client.get({
+        endpoint: TAG_ENDPOINT,
+        contentId: tagId,
+        queries: {
+            fields: "id,name"
+        },
+    }));
+}
+
+async function findArticles(tagId: string): Promise<Article[]> {
+    return (await client.get({
+        endpoint: "articles",
+        queries: {
+            fields: "id,title,tags",
+            filters: `tags[contains]${tagId}`,
+            limit: 100
+        }
+    })).contents.map((content: any) => parseArticle(content));
 }

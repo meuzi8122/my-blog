@@ -1,5 +1,7 @@
 "use client";
 
+import { Text } from "@/components/shared";
+
 type Props = {
     error: Error;
     reset: () => void;
@@ -8,9 +10,9 @@ type Props = {
 export default ({ error, reset }: Props) => {
 
     return (
-        <div>
-            <p>ページ読み込みエラー</p>
-        </div>
+        <>
+            <Text>ページ読み込みエラー</Text>
+        </>
     )
 
 }
