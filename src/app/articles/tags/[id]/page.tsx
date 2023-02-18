@@ -27,6 +27,17 @@ export default async ({ params: { id } }: Props) => {
 
 }
 
+export async function generateStaticParams() {
+    return (await client.get({
+        endpoint: TAG_ENDPOINT,
+        queries: {
+            fields: "id",
+            limit: 100
+        }
+    })).contents.map((content: any) => ({ id: content.id }));
+}
+
+
 async function getTag(tagId: string): Promise<Tag> {
     return parseTag(await client.get({
         endpoint: TAG_ENDPOINT,
