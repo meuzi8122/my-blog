@@ -19,7 +19,7 @@ export default async () => {
 
 }
 
-export async function findArticles(): Promise<Article[]> {
+async function findArticles(): Promise<Article[]> {
     return (await client.get({
         endpoint: ARTICLE_ENDPOINT,
         queries: {
