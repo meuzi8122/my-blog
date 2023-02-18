@@ -11,7 +11,6 @@ import {
     IconButton, 
     Stack,
     Text,
-    VStack
 } from "@chakra-ui/react";
 
 export {
@@ -22,7 +21,6 @@ export {
     Divider,
     Heading,
     HStack,
-    VStack,
     Text,
     Flex,
     Stack,

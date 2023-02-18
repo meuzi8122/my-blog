@@ -1,6 +1,8 @@
-import { Badge, Box, Divider, Heading, HStack, Text } from "@/components/shared";
+import { Box, Divider, Heading, HStack, Text } from "@/components/shared";
+import TagBadge from "@/components/badge/tag";
 import type { Article } from "@/types";
 import NextLink from "next/link";
+import { Fragment } from "react";
 
 type Props = {
     article: Article;
@@ -16,9 +18,9 @@ export default ({ article }: Props) => {
             <Text fontSize="md" color="gray.500" mt={2} mb={1}>{article.revisedAt}</Text>
             <HStack spacing={1}>
                 {article.tags.map(tag =>
-                    <NextLink key={tag.id} href={`/articles/tags/${tag.id}`}>
-                        <Badge fontSize="sm" textTransform="none" colorScheme="green">{tag.name}</Badge>
-                    </NextLink>
+                    <Fragment key={tag.id}>
+                        <TagBadge tag={tag} />
+                    </Fragment>
                 )}
             </HStack>
             <Divider color="gray.300" mt={5} mb={5} border="1px" />
